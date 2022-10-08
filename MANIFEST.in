@@ -1,0 +1,4 @@
+include README.md
+include LICENSE
+recursive-include src/awesome_panel_cli/templates *
+include src/awesome_panel_cli/py.typed
