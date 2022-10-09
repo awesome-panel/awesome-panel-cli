@@ -99,9 +99,13 @@ pn create project --help
 
 ### 💻 Install for Development
 
-To install for development you need to run
+To install for development you will need a fresh and activated virtual environment.
+
+Then run
 
 ```bash
+git clone https://github.com/awesome-panel/awesome-panel-cli.git
+cd awesome-panel-cli
 pip install pip -U
 pip install -e .[all]
 ```
