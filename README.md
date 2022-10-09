@@ -17,7 +17,7 @@ pip install awesome-panel-cli[all]
 pn create app
 ```
 
-![Awesome Panel CLI Intro](assets/videos/awesome-panel-cli-intro.gif)
+![Awesome Panel CLI Intro](https://github.com/awesome-panel/awesome-panel-cli/blob/main/assets/videos/awesome-panel-cli-intro-small.gif?raw=true)
 
 This project draws inspiration from other CLI tools like
 
