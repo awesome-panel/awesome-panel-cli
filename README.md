@@ -4,7 +4,8 @@
 
 THIS PROJECT IS IN AN EARLY ALPHA STATE AND WILL CHANGE. USE AT YOUR OWN RISK.
 
-The aim of the `awesome-panel-cli` project is to turn any Panel developer into a highly productive developer of high quality data apps.
+The aim of the `awesome-panel-cli` project is to turn any user of the CLI into a
+highly productive developer of high quality Panel apps.
 
 To do this the `awesome-panel-cli` provides an opinionated command line interface (CLI) `pn`.
 
