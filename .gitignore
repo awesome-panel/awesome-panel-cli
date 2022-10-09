@@ -165,4 +165,3 @@ script.*
 .vscode/
 src/awesome_panel_cli/introduction/tmp/
 examples/*
-altair_starter.py

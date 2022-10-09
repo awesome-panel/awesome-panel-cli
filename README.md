@@ -19,13 +19,18 @@ This project draws inspiration from other CLI tools like
 
 - [Angular CLI](https://angular.io/cli).
 - [Django management commands](https://www.djangoproject.com/)
+- [django-simple-deploy](https://github.com/ehmatthes/django-simple-deploy)
 - [React Create App](https://reactjs.org/docs/create-a-new-react-app.html)
 
-But the `awesome-panel-cli` also aims to provide additional, unique features like easy deployment.
+This project is a part of the [awesome-panel](https://awesome-panel.org) project. Please support
+the project by giving it a ⭐ at
+[awesome-panel/awesome-panel](https://github.com/awesome-panel/awesome-panel).
 
-## Hacktoberfest
+## Contributing
 
-If you are looking to contribute you can find ideas in the [issue tracker](https://github.com/awesome-panel/awesome-panel-cli/issues)).
+If you are looking to contribute you can find ideas in the [issue tracker](https://github.com/awesome-panel/awesome-panel-cli/issues).
+
+I would ❤️ to support and receive your contributions. Thanks.
 
 [![Hacktober Fest](https://github.blog/wp-content/uploads/2022/10/hacktoberfestbanner.jpeg?fit=1200%2C630)](https://github.com/awesome-panel/awesome-panel-cli/issues).
 
@@ -66,7 +71,7 @@ To install for development you need to run
 
 ```bash
 pip install pip -U
-pip install -e .[dev]
+pip install -e .[all]
 ```
 
 Then you can see the available commands via
@@ -82,3 +87,12 @@ pn test all
 ```
 
 Please run this command before you `git push` and fix any failing tests.
+
+## Install the current `master` branch
+
+If you want to try out or test the newest features you can install the current `master` branch via
+
+```bash
+pip install pip -U
+pip install git+https://github.com/awesome-panel/awesome-panel-cli.git
+```

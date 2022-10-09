@@ -67,12 +67,19 @@ def _print_comments(source_dir):
     pn test all
     pn --help
     panel serve apps/app.py --autoreload
+    ```
 
-    You may optionally release your project to [Github](https://github.com/) by
+    If you want to serve the Awesome Panel reference apps or notebooks you will need to install
+
+    ```bash
+    pip install awesome-panel-cli[all] -U
+    ```
+
+    If you want to release your project to [Github](https://github.com/) you can do so by
 
     Creating a new, empty repository, i.e. with no `README.md`, `LICENSE` or `.gitignore` files.
 
-    Then run
+    Then running
 
     ```bash
     git remote add origin https://github.com/<github-user>/{ source_dir.name }.git
