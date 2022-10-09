@@ -5,7 +5,8 @@
 THIS PROJECT IS IN AN ALPHA STATE AND WILL CHANGE. USE IT AT YOUR OWN RISK.
 
 The aim of the `awesome-panel-cli` project is to **turn you into a
-rockstar developer of high quality data apps.**
+rockstar developer of high quality data apps**. We want to provide the best developer
+experience for data apps in Python.
 
 To do this the `awesome-panel-cli` provides an opinionated command line interface (CLI) `pn` and a
 set of *best practice* templates.
@@ -26,9 +27,13 @@ This project draws inspiration from other CLI tools like
 - [django-simple-deploy](https://github.com/ehmatthes/django-simple-deploy)
 - [React Create App](https://reactjs.org/docs/create-a-new-react-app.html)
 
-This project is a part of the [awesome-panel](https://awesome-panel.org) project. Please support the
-[awesome-panel](https://awesome-panel.org) project by giving it a ⭐ at
-[awesome-panel/awesome-panel](https://github.com/awesome-panel/awesome-panel).
+This project is a part of the [awesome-panel](https://awesome-panel.org) project. 
+
+Please support [Panel](https://panel.holoviz.org) and
+[awesome-panel](https://awesome-panel.org) by giving the projects a ⭐ on Github:
+
+- [holoviz/panel](https://github.com/holoviz/panel).
+- [awesome-panel/awesome-panel](https://github.com/awesome-panel/awesome-panel).
 
 Thanks
 

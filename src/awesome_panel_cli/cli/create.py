@@ -93,10 +93,10 @@ def _print_comments(source_dir):
 @app.command()
 def project(virtual_env: bool = True):
     """Creates a new best practice python project for developing data apps
-    
+
     This will create a new project in a subfolder of the current directory.
-    
-    This includes a virtual environment, a pyproject.toml file, a starter apps/app.py file, 
+
+    This includes a virtual environment, a pyproject.toml file, a starter apps/app.py file,
     a starter tests/test_hello.py file and more
     """
     source_dir: None | Path = None
