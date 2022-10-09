@@ -4,14 +4,16 @@
 
 THIS PROJECT IS IN AN ALPHA STATE AND WILL CHANGE. USE IT AT YOUR OWN RISK.
 
-The aim of the `awesome-panel-cli` project is to **turn you into a
-rockstar developer of high quality data apps**. We want to provide the best developer
-experience for data apps in Python.
+We want to
 
-To do this the `awesome-panel-cli` provides an opinionated command line interface (CLI) `pn` and a
-set of *best practice* templates.
+- **make it super simple to create high-quality data apps**.
 
-For example you can install and create a new *app* as simple as
+We provide
+
+- an opinionated command line interface (CLI) `pn` and
+- a set of *best practice* templates
+
+You can install and create a new *app* as simple as
 
 ```bash
 pip install awesome-panel-cli[all]
