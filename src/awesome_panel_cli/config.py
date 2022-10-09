@@ -8,11 +8,12 @@ TEST_FOLDERS = "tests"
 TEST_RESULTS_FOLDER = "test_results"
 BANDIT_SEVERITY_LEVEL = "medium"
 LOGGING_FORMAT = "%(message)s"
+
 ROOT = Path(__file__).parent
 TEMPLATES = ROOT / "templates"
-EXAMPLES = ROOT / "examples"
-INTRODUCTION = ROOT / "introduction"
-PROJECT_TEMPLATE_ROOT = TEMPLATES / "project"
+REFERENCE_APPS = TEMPLATES / "apps"
+REFERENCE_NOTEBOOKS = TEMPLATES / "notebooks"
+REFERENCE_PROJECT = TEMPLATES / "project"
 
 
 def _to_cwd_path(cwd: Optional[Union[str, Path]] = None) -> Path:
@@ -63,10 +64,17 @@ PACKAGE_FOLDER = _get_package_folder(_CWD).relative_to(_CWD)
 FILES = _get_files()
 
 
-class Example(str, Enum):
-    """Represents Awesome Panel example apps"""
+class App(str, Enum):
+    """Represents Awesome Panel reference apps"""
 
     ALTAIR_STARTER = "altair"
     CROSS_FILTERING = "cross_filtering"
     HELLO_WORLD = "hello_world"
     STREAMING_INDICATORS = "streaming"
+
+
+class Notebook(str, Enum):
+    """Represents Awesome Panel reference notebooks"""
+
+    INTRODUCTION = "introduction"
+    GETTING_STARTED = "getting_started"

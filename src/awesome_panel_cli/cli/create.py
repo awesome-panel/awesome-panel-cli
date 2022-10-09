@@ -4,6 +4,7 @@ from __future__ import annotations
 import os
 import shutil
 import tempfile
+from enum import Enum
 from pathlib import Path
 
 import typer
@@ -12,7 +13,6 @@ from rich.console import Console
 from rich.markdown import Markdown
 
 from awesome_panel_cli import config
-from awesome_panel_cli.config import EXAMPLES, Example
 from awesome_panel_cli.shared import logger, run, set_directory
 
 app = typer.Typer()
@@ -24,7 +24,7 @@ def _create_project_files(
 ) -> Path:
     logger.info("Creating project files from cookiecutter template")
     project_dir = cookiecutter(
-        str(config.PROJECT_TEMPLATE_ROOT), no_input=no_input, output_dir=output_dir
+        str(config.REFERENCE_PROJECT), no_input=no_input, output_dir=output_dir
     )
     return Path(project_dir)
 
@@ -107,15 +107,9 @@ def project(virtual_env: bool = True):
             logger.exception("The Project was NOT created", exc_info=ex)
 
 
-@app.command(name="app")
-def app_(name: Example = Example.HELLO_WORLD):
-    """Create a new app file in the current working directory
-
-    Args:
-        name: The name of an Awesome Panel example app. Defaults to 'hello_world'.
-    """
-    file_name = name.name.lower() + ".py"
-    source = EXAMPLES / file_name
+def _copy_file(name: Enum, source_dir: Path, postfix: str = ".py"):
+    file_name = name.name.lower() + postfix
+    source = source_dir / file_name
     target = Path.cwd()
     target = target / file_name
     if target.exists():
@@ -125,18 +119,47 @@ def app_(name: Example = Example.HELLO_WORLD):
         logger.info("created: %s", target)
 
 
-@app.command()
-def examples():
-    """Creates an examples folder with all the Awesome Panel examples"""
-    source = EXAMPLES
-    target = Path.cwd() / "examples"
+@app.command(name="app")
+def app_(name: config.App = config.App.HELLO_WORLD):
+    """Create a new app file in the current working directory
 
-    if target.exists():
-        logger.error("The folder %s already exists!", target)
-    else:
-        shutil.copytree(source, target)
-        logger.info("created: %s", target)
-        logger.info("serve with `panel serve examples/*.py`")
+    Args:
+        name: The name of an Awesome Panel reference app. Defaults to 'hello_world'.
+    """
+    _copy_file(name=name, source_dir=config.REFERENCE_APPS)
+
+
+@app.command()
+def notebook(name: config.Notebook = config.Notebook.INTRODUCTION):
+    """Create a new notebook file in the current working directory
+
+    Args:
+        name: The name of an Awesome Panel reference notebook. Defaults to 'introduction'.
+    """
+    _copy_file(name, config.REFERENCE_NOTEBOOKS, postfix=".ipynb")
+
+
+@app.command()
+def examples(target="examples"):
+    """Creates an examples folder with all the Awesome Panel reference examples"""
+    _examples = Path.cwd() / target
+    if _examples.exists():
+        logger.error("The folder %s already exists! Please delete it first and rerun.", _examples)
+        return
+
+    try:
+        for _source, _target_dir in [
+            (config.REFERENCE_APPS, "apps"),
+            (config.REFERENCE_NOTEBOOKS, "notebooks"),
+        ]:
+            _target = _examples / _target_dir
+
+            shutil.copytree(_source, _target)
+        logger.info("created: %s", _target)
+    except Exception as ex:  # pylint: disable=broad-except
+        if _examples.exists():
+            shutil.rmtree(_examples)
+            logger.exception("Could not create examples folder", exc_info=ex)
 
 
 @app.command()

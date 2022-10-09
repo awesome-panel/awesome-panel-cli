@@ -25,7 +25,14 @@ def test_run():
 def test_show(spy):
     """We can showcase some panel apps"""
     serve()
-    expected = ["panel", "serve", "--num-threads", "4", str(config.EXAMPLES) + "/*.py", "--glob"]
+    expected = [
+        "panel",
+        "serve",
+        "--num-threads",
+        "4",
+        str(config.REFERENCE_APPS) + "/*.py",
+        "--glob",
+    ]
     spy.assert_called_once_with(command=expected)
 
 
@@ -38,6 +45,6 @@ def test_intro(spy):
         "--port",
         "8889",
         "--notebook-dir",
-        str(config.INTRODUCTION / "tmp"),
+        str(config.REFERENCE_NOTEBOOKS / "tmp"),
     ]
     spy.assert_called_once_with(command=expected)

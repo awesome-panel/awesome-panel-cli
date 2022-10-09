@@ -15,6 +15,20 @@ For example you can create a new app as simple as
 pn create app
 ```
 
+This project draws inspiration from other CLI tools like
+
+- [Angular CLI](https://angular.io/cli).
+- [Django management commands](https://www.djangoproject.com/)
+- [React Create App](https://reactjs.org/docs/create-a-new-react-app.html)
+
+But the `awesome-panel-cli` also aims to provide additional, unique features like easy deployment.
+
+## Hacktoberfest
+
+If you are looking to contribute you can find ideas in the [issue tracker](https://github.com/awesome-panel/awesome-panel-cli/issues)).
+
+[![Hacktober Fest](https://github.blog/wp-content/uploads/2022/10/hacktoberfestbanner.jpeg?fit=1200%2C630)](https://github.com/awesome-panel/awesome-panel-cli/issues).
+
 ## 🧳 Prerequisites
 
 - A working [Python](https://www.python.org/downloads/) environment.
