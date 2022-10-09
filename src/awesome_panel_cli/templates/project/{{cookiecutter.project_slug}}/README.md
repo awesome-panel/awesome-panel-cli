@@ -4,6 +4,8 @@ This purpose of this project ...
 
 ## 📙 How to
 
+Below we describe how to get the package or repository installed.
+
 ### 🚀 Install for usage
 
 You can install the package via
@@ -12,7 +14,7 @@ You can install the package via
 pip install {{ cookiecutter.project_slug }}
 ```
 
-### ‎‍💻 Install for development
+### 💻 Install for development
 
 To install for development you need to
 

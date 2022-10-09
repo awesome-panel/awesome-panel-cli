@@ -1,6 +1,7 @@
 """Provides functionality for creating a new Panel project, app, component or examples folder."""
 from __future__ import annotations
 
+import os
 import shutil
 import tempfile
 from pathlib import Path
@@ -21,6 +22,7 @@ def _create_project_files(
     output_dir="",
     no_input=False,
 ) -> Path:
+    logger.info("Creating project files from cookiecutter template")
     project_dir = cookiecutter(
         str(config.PROJECT_TEMPLATE_ROOT), no_input=no_input, output_dir=output_dir
     )
@@ -28,37 +30,81 @@ def _create_project_files(
 
 
 def _git_init():
+    logger.info("Initializing git")
     run(["git", "init", "--initial-branch", "main"])
     run(["git", "add", "."])
     run(["git", "commit", "-a", "-m", "'Initial commit'"])
 
 
-@app.command()
-def project():
-    """Create new project"""
-    with tempfile.TemporaryDirectory() as tmpdir:
-        source_dir = _create_project_files(output_dir=tmpdir)
-        with set_directory(source_dir):
-            _git_init()
+def _get_python_path() -> str:
+    if os.name == "nt":
+        return str(Path(".venv/Scripts/python"))
+    return str(Path(".venv/bin/python"))
 
-        shutil.copytree(source_dir, source_dir.name)
-    logger.info("Project %s was successfully created", source_dir.name)
+
+def _get_python_env_activate_command() -> str:
+    if os.name == "nt":
+        return ".venv/Scripts/activate"
+    return "source .venv/bin/activate"
+
+
+def _create_virtual_environment():
+    logger.info("Creating the virtual environment")
+    run(["python", "-m", "venv", ".venv"])
+    run([_get_python_path(), "-m", "pip", "install", "pip", "-U"])
+    run([_get_python_path(), "-m", "pip", "install", "-e", ".[dev]", "-U"])
+
+
+def _print_comments(source_dir):
+    console = Console()
     markdown = Markdown(
         f"""
-    To finalize and test the installation please run
+    You may try out your new repository by running
 
     ```bash
-    cd {source_dir.name}
-    python -m venv .venv
-    source .venv/bin/activate
-    pip install pip -U
-    pip install -e .[dev]
+    cd {source_dir}
+    {_get_python_env_activate_command()}
     pn test all
+    pn --help
+    panel serve apps/app.py --autoreload
+
+    You may optionally release your project to [Github](https://github.com/) by
+
+    Creating a new, empty repository, i.e. with no `README.md`, `LICENSE` or `.gitignore` files.
+
+    Then run
+
+    ```bash
+    git remote add origin https://github.com/<github-user>/{ source_dir.name }.git
+    git push -f origin main
     ```
     """
     )
-    console = Console()
     console.print(markdown)
+
+
+@app.command()
+def project(virtual_env: bool = True):
+    """Create new project"""
+    source_dir: None | Path = None
+    with tempfile.TemporaryDirectory() as tmpdir:
+        try:
+            tmp_source_dir = _create_project_files(output_dir=tmpdir)
+            with set_directory(tmp_source_dir):
+                _git_init()
+            shutil.copytree(tmp_source_dir, tmp_source_dir.name)
+
+            source_dir = Path(tmp_source_dir.name)
+            if virtual_env:
+                with set_directory(source_dir):
+                    _create_virtual_environment()
+            _print_comments(source_dir=source_dir)
+
+            logger.info("The Project %s was successfully created", source_dir.name)
+        except Exception as ex:  # pylint: disable=broad-except
+            if isinstance(source_dir, Path) and source_dir.exists():
+                shutil.rmtree(source_dir)
+            logger.exception("The Project was NOT created", exc_info=ex)
 
 
 @app.command(name="app")

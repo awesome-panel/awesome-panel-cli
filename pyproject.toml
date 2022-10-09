@@ -15,7 +15,7 @@ classifiers = [
 dependencies = [
     "autoflake",
     "bandit",
-    "black",
+    "black[jupyter]",
     "cookiecutter",
     "mypy",
     "pylint",

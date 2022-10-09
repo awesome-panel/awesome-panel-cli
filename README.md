@@ -2,11 +2,13 @@
 
 # 🚪 Introduction Awesome Panel CLI
 
-THIS PROJECT IS IN AN EARLY ALPHA STATE.
+THIS PROJECT IS IN AN EARLY ALPHA STATE AND WILL CHANGE. USE AT YOUR OWN RISK.
 
-The Awesome Panel CLI package provides a command line interface to speed up your workflow when working with Panel.
+The aim of the `awesome-panel-cli` project is to turn any Panel developer into a highly productive developer of high quality data apps.
 
-For example you can create a new app by
+To do this the `awesome-panel-cli` provides an opinionated command line interface (CLI) `pn`.
+
+For example you can create a new app as simple as
 
 ```bash
 pn create app
@@ -14,10 +16,14 @@ pn create app
 
 ## 🧳 Prerequisites
 
-- Python
-- [Git CLI](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- A working [Python](https://www.python.org/downloads/) environment.
+- [Git CLI](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
-## 📙 Using
+## 📙 How to
+
+Below we describe how to get started.
+
+## 🚀 Install for usage
 
 You can install the package via
 
@@ -25,37 +31,26 @@ You can install the package via
 pip install awesome-panel-cli
 ```
 
-If you additionally want to serve the *intro** notebook or *hello world* apps you should run
+If you additionally want to serve the *intro* notebook or *example* apps you should run
 
 ```bash
 pip install awesome-panel-cli[all]
-`` 
+```
 
 You will then have access to a powerful command line interface invoked using the command `pn`.
+
+Try running
 
 ```bash
 pn --help
 ```
 
-And get additional help via `--help`
-
-```bash
-pn create component --help
-```
-
-### 🚗 Creating a new project
-
-Executing:
-
-```bash
-pn create project
-```
-
-## ‎‍💻 Development
+## 💻 Install for Development
 
 To install for development you need to run
 
 ```bash
+pip install pip -U
 pip install -e .[dev]
 ```
 

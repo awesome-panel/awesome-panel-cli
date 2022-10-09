@@ -23,7 +23,7 @@ authors = [
 ]
 
 [project.optional-dependencies]
-dev = ["awesome-panel-cli"]
+dev = []
 
 [project.urls]
 repository = "https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.project_slug }}"
