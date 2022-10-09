@@ -73,31 +73,31 @@ Try running
 pn --help
 ```
 
-![pn help](assets/images/pn-help.png)
+![pn help](https://github.com/awesome-panel/awesome-panel-cli/blob/main/assets/images/pn-help.png?raw=true)
 
 ```bash
 pn hello --help
 ```
 
-![pn help](assets/images/pn-hello-help.png)
+![pn --help](https://github.com/awesome-panel/awesome-panel-cli/blob/main/assets/images/pn-hello-help.png?raw=true)
 
 ```bash
 pn create --help
 ```
 
-![pn help](assets/images/pn-create-help.png)
+![pn create --help](https://github.com/awesome-panel/awesome-panel-cli/blob/main/assets/images/pn-create-help.png?raw=true)
 
 ```bash
 pn create app --help
 ```
 
-![pn help](assets/images/pn-create-app-help.png)
+![pn create app --help](https://github.com/awesome-panel/awesome-panel-cli/blob/main/assets/images/pn-create-app-help.png?raw=true)
 
 ```bash
 pn create project --help
 ```
 
-![pn help](assets/images/pn-create-project-help.png)
+![pn create project --help](https://github.com/awesome-panel/awesome-panel-cli/blob/main/assets/images/pn-create-project-help.png?raw=true)
 
 ### 💻 Install for Development
 
