@@ -65,6 +65,8 @@ pip install awesome-panel-cli[all]
 
 You will then have access to a powerful command line interface invoked using the command `pn`.
 
+## How to figure out which commands are available
+
 Try running
 
 ```bash
