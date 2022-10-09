@@ -2,7 +2,7 @@
 
 # 🚪 Awesome Panel CLI Intro
 
-THIS PROJECT IS IN AN ALPHA STATE AND WILL CHANGE. USE AT YOUR OWN RISK.
+THIS PROJECT IS IN AN ALPHA STATE AND WILL CHANGE. USE IT AT YOUR OWN RISK.
 
 The aim of the `awesome-panel-cli` project is to **turn you into a
 rockstar developer of high quality data apps.**
