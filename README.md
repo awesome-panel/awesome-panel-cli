@@ -6,7 +6,7 @@ THIS PROJECT IS IN AN ALPHA STATE AND WILL CHANGE. USE IT AT YOUR OWN RISK.
 
 We want to
 
-- **make it super simple to create high-quality data apps**.
+- make it super simple to create high-quality data apps.
 
 We provide
 
