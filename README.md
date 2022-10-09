@@ -2,18 +2,22 @@
 
 # 🚪 Awesome Panel CLI Intro
 
-THIS PROJECT IS IN AN EARLY ALPHA STATE AND WILL CHANGE. USE AT YOUR OWN RISK.
+THIS PROJECT IS IN AN ALPHA STATE AND WILL CHANGE. USE AT YOUR OWN RISK.
 
-The aim of the `awesome-panel-cli` project is to turn any user of the CLI into a
-highly productive developer of high quality Panel apps.
+The aim of the `awesome-panel-cli` project is to **turn you into a
+rockstar developer of high quality data apps.**
 
-To do this the `awesome-panel-cli` provides an opinionated command line interface (CLI) `pn`.
+To do this the `awesome-panel-cli` provides an opinionated command line interface (CLI) `pn` and a
+set of *best practice* templates.
 
-For example you can create a new app as simple as
+For example you can install and create a new *app* as simple as
 
 ```bash
+pip install awesome-panel-cli[all]
 pn create app
 ```
+
+![Awesome Panel CLI Intro](assets/videos/awesome-panel-cli-intro.gif)
 
 This project draws inspiration from other CLI tools like
 
@@ -22,9 +26,11 @@ This project draws inspiration from other CLI tools like
 - [django-simple-deploy](https://github.com/ehmatthes/django-simple-deploy)
 - [React Create App](https://reactjs.org/docs/create-a-new-react-app.html)
 
-This project is a part of the [awesome-panel](https://awesome-panel.org) project. Please support
-the project by giving it a ⭐ at
+This project is a part of the [awesome-panel](https://awesome-panel.org) project. Please support the
+[awesome-panel](https://awesome-panel.org) project by giving it a ⭐ at
 [awesome-panel/awesome-panel](https://github.com/awesome-panel/awesome-panel).
+
+Thanks
 
 ## Contributing
 
@@ -43,7 +49,7 @@ I would ❤️ to support and receive your contributions. Thanks.
 
 Below we describe how to get started.
 
-## 🚀 Install for usage
+### 🚀 Install for usage
 
 You can install the package via
 
@@ -65,7 +71,7 @@ Try running
 pn --help
 ```
 
-## 💻 Install for Development
+### 💻 Install for Development
 
 To install for development you need to run
 
@@ -88,7 +94,7 @@ pn test all
 
 Please run this command before you `git push` and fix any failing tests.
 
-## Install the current `master` branch
+### 🔥 Install the current `master` branch
 
 If you want to try out or test the newest features you can install the current `master` branch via
 

@@ -20,9 +20,9 @@ accent_color = "#ff286e"
 
 def get_plot():
     scatter = flowers.hvplot.scatter(
-        x="sepal_length", y="sepal_width", c=accent_color, responsive=True, height=350
+        x="sepal_length", y="sepal_width", c=accent_color, responsive=True, height=300
     )
-    hist = flowers.hvplot.hist("petal_width", c=accent_color, responsive=True, height=350)
+    hist = flowers.hvplot.hist("petal_width", c=accent_color, responsive=True, height=300)
 
     scatter.opts(size=10)
 

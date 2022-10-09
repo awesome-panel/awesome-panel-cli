@@ -23,4 +23,4 @@ def python_package(version: str, test: bool = False):
             ]
         )
     run(command=command)
-    logger.info("Package build finished with success")
+    logger.info("Package released with with success")
