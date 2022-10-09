@@ -71,6 +71,32 @@ Try running
 pn --help
 ```
 
+![pn help](assets/images/pn-help.png)
+
+```bash
+pn hello --help
+```
+
+![pn help](assets/images/pn-hello-help.png)
+
+```bash
+pn create --help
+```
+
+![pn help](assets/images/pn-create-help.png)
+
+```bash
+pn create app --help
+```
+
+![pn help](assets/images/pn-create-app-help.png)
+
+```bash
+pn create project --help
+```
+
+![pn help](assets/images/pn-create-project-help.png)
+
 ### 💻 Install for Development
 
 To install for development you need to run
