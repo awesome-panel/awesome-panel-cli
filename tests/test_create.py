@@ -40,6 +40,33 @@ def test_create_notebook(tmpdir):
         assert target.exists()
 
 
+def test_create_view(tmpdir):
+    """We can create a component"""
+    source = config.View.VIEW
+    target = Path(source.name.lower() + ".py")
+    with set_directory(tmpdir):
+        create.view(source)
+        assert target.exists()
+
+
+def test_create_widget(tmpdir):
+    """We can create a widget"""
+    source = config.Widget.VIEWER
+    target = Path(source.name.lower() + ".py")
+    with set_directory(tmpdir):
+        create.widget(source)
+        assert target.exists()
+
+
+def test_create_widget_example(tmpdir):
+    """We can create a widget example"""
+    source = config.Widget.VIEWER
+    target = Path(source.name.lower() + "_example.py")
+    with set_directory(tmpdir):
+        create.widget(source, example=True)
+        assert target.exists()
+
+
 def test_create_examples(tmpdir):
     """We can create an examples folder"""
     with set_directory(tmpdir):
@@ -47,3 +74,5 @@ def test_create_examples(tmpdir):
         examples = Path("examples")
         assert (examples / "apps" / "hello_world.py").exists()
         assert (examples / "notebooks" / "introduction.ipynb").exists()
+        assert (examples / "views" / "view_html.py").exists()
+        assert (examples / "widgets" / "viewer.py").exists()

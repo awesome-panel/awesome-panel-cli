@@ -134,22 +134,59 @@ def _copy_file(name: Enum, source_dir: Path, postfix: str = ".py"):
 
 @app.command(name="app")
 def app_(name: config.App = config.App.HELLO_WORLD):
-    """Create a new app file in the current working directory
+    """Creates a new app file in the current working directory
 
     Args:
-        name: The name of an Awesome Panel reference app. Defaults to 'hello_world'.
+        name: The name of an reference app. Defaults to 'hello_world'.
     """
-    _copy_file(name=name, source_dir=config.REFERENCE_APPS)
+    _copy_file(
+        name=name,
+        source_dir=config.REFERENCE_APPS,
+    )
 
 
 @app.command()
 def notebook(name: config.Notebook = config.Notebook.INTRODUCTION):
-    """Create a new notebook file in the current working directory
+    """Creates a new notebook file in the current working directory
 
     Args:
-        name: The name of an Awesome Panel reference notebook. Defaults to 'introduction'.
+        name: The name of an reference notebook. Defaults to 'introduction'.
     """
     _copy_file(name, config.REFERENCE_NOTEBOOKS, postfix=".ipynb")
+
+
+@app.command()
+def view(name: config.View = config.View.VIEW):
+    """Creates a new view file in the current working directory
+
+    A view is just a function returning some object that Panel can display.
+
+    Args:
+        name: The name of a reference view. Defaults to 'view'.
+        example: If True the file generated contains a detailed example
+    """
+    _copy_file(
+        name,
+        config.REFERENCE_VIEWS,
+    )
+
+
+@app.command()
+def widget(name: config.Widget = config.Widget.VIEWER, example: bool = False):
+    """Creates a new widget file in the current working directory
+
+    A widget is a Parameterized Class with a `value` parameter. You can set the value. The value
+    can change when the user interacts with the widget.
+
+    Args:
+        name: The name of a reference widget. Defaults to 'viewer'.
+        example: If True the file generated contains a detailed example
+    """
+    if example:
+        prefix = "_example.py"
+    else:
+        prefix = ".py"
+    _copy_file(name, config.REFERENCE_WIDGETS, prefix)
 
 
 @app.command()
@@ -164,6 +201,8 @@ def examples(target="examples"):
         for _source, _target_dir in [
             (config.REFERENCE_APPS, "apps"),
             (config.REFERENCE_NOTEBOOKS, "notebooks"),
+            (config.REFERENCE_VIEWS, "views"),
+            (config.REFERENCE_WIDGETS, "widgets"),
         ]:
             _target = _examples / _target_dir
 
@@ -173,9 +212,3 @@ def examples(target="examples"):
         if _examples.exists():
             shutil.rmtree(_examples)
             logger.exception("Could not create examples folder", exc_info=ex)
-
-
-@app.command()
-def component():
-    """Create new component"""
-    raise NotImplementedError()

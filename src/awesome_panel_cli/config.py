@@ -12,8 +12,10 @@ LOGGING_FORMAT = "%(message)s"
 ROOT = Path(__file__).parent
 TEMPLATES = ROOT / "templates"
 REFERENCE_APPS = TEMPLATES / "apps"
+REFERENCE_VIEWS = TEMPLATES / "views"
 REFERENCE_NOTEBOOKS = TEMPLATES / "notebooks"
 REFERENCE_PROJECT = TEMPLATES / "project"
+REFERENCE_WIDGETS = TEMPLATES / "widgets"
 
 
 def _to_cwd_path(cwd: Optional[Union[str, Path]] = None) -> Path:
@@ -65,7 +67,7 @@ FILES = _get_files()
 
 
 class App(str, Enum):
-    """Represents Awesome Panel reference apps"""
+    """Represents reference apps"""
 
     ALTAIR_STARTER = "altair"
     CROSS_FILTERING = "cross_filtering"
@@ -74,7 +76,26 @@ class App(str, Enum):
 
 
 class Notebook(str, Enum):
-    """Represents Awesome Panel reference notebooks"""
+    """Represents reference notebooks"""
 
     INTRODUCTION = "introduction"
     GETTING_STARTED = "getting_started"
+
+
+class View(str, Enum):
+    """Represents reference views
+
+    A `View` is just a function. It can return a composite Panel component, output of a model or
+    algorithm, Markdown, HTML and more. You can bind widgets and parameters to views.
+
+    You can also make interactive, standalone components by combining a *view* with a *viewer*
+    pane."""
+
+    VIEW = "view"
+    VIEW_HTML = "html"
+
+
+class Widget(str, Enum):
+    """Represents reference components"""
+
+    VIEWER = "viewer"
