@@ -84,6 +84,7 @@ def _print_comments(source_dir):
     ```bash
     git remote add origin https://github.com/<github-user>/{ source_dir.name }.git
     git push -f origin main
+    pn create github-actions
     ```
     """
     )
@@ -212,3 +213,20 @@ def examples(target="examples"):
         if _examples.exists():
             shutil.rmtree(_examples)
             logger.exception("Could not create examples folder", exc_info=ex)
+
+
+@app.command()
+def github_actions():
+    """Populates the .github folder"""
+    target = Path.cwd() / ".github"
+    source = config.REFERENCE_GITHUB
+
+    if target.exists():
+        logger.error("The folder %s already exists! Please delete it first and rerun.", target)
+        return
+
+    try:
+        shutil.copytree(source, target)
+        logger.info("created: %s", target)
+    except Exception as ex:  # pylint: disable=broad-except
+        logger.exception("Could not create examples folder", exc_info=ex)

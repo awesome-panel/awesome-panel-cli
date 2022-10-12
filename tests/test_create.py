@@ -76,3 +76,11 @@ def test_create_examples(tmpdir):
         assert (examples / "notebooks" / "introduction.ipynb").exists()
         assert (examples / "views" / "view_html.py").exists()
         assert (examples / "widgets" / "viewer.py").exists()
+
+
+def test_create_github(tmpdir):
+    """We can create a github actions folder"""
+    with set_directory(tmpdir):
+        create.github_actions()
+        github = Path(".github")
+        assert (github / "workflows" / "tests.yaml").exists()
