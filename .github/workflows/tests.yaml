@@ -35,6 +35,8 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
+        with:
+            fetch-depth: "1"
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
@@ -60,8 +62,9 @@ jobs:
           pn test pytest --report
         if: always()
       - name: Upload Coverage
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: code-coverage-report
-          path: test_results/cov_html
+          files: test_results/cov_html/coverage.xml
+          env_vars: OS,PYTHON
         if: always()
