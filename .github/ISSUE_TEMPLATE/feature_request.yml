@@ -8,7 +8,7 @@ body:
     id: request
     attributes:
       label: "Request"
-      description: Provide a brief explanation of your request
+      description: Provide a brief explanation of your request. Supplementary images or videos are much appreciated.
       placeholder: Describe in a few lines your feature request
     validations:
       required: true
@@ -16,8 +16,8 @@ body:
     id: motivation
     attributes:
       label: "Motivation"
-      description: Provide a motivation for your request
-      placeholder: Describe why your feature request would be relevant and important.
+      description: Describe why your feature request is be relevant and important. Supplementary images or videos are much appreciated.
+      placeholder: This feature would make it possible to ...
     validations:
       required: true
   - type: textarea
@@ -40,7 +40,7 @@ body:
     id: additional
     attributes:
       label: "Additional Context"
-      description: Provide other information relevant for the feature request
+      description: Provide other information relevant for the feature request. Supplementary images or videos are much appreciated.
       placeholder: Describe any other information that would be relevant including open questions
     validations:
       required: false  
