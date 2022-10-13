@@ -17,7 +17,9 @@ body:
     attributes:
       label: "Motivation"
       description: . Provide motivation for your feature request.
-      placeholder: Describe why your feature request is be relevant and important. Supplementary images or videos are much appreciated.
+      placeholder: | 
+        Describe why your feature request is be relevant and important.
+        Supplementary images or videos are much appreciated.
     validations:
       required: true
   - type: textarea
