@@ -27,6 +27,14 @@ body:
     validations:
       required: true
   - type: textarea
+    id: screenshots
+    attributes:
+      label: "Screenshots"
+      description: Please provide any screenshots, .gifs or .mp4s of the issue
+      placeholder: You can drag and drop your screenshots here...
+    validations:
+      required: false
+  - type: textarea
     id: requirements
     attributes:
       label: "Requirements"
@@ -57,14 +65,6 @@ body:
         2022-10-13 05:59:36,200 Starting Bokeh server version 2.4.3 (running on Tornado 6.2)
         2022-10-13 05:59:36,212 Bokeh app running at: http://localhost:5006/script
       render: bash
-    validations:
-      required: false
-  - type: textarea
-    id: screenshots
-    attributes:
-      label: "Screenshots"
-      description: Please provide any screenshots, .gifs or .mp4s of the issue
-      placeholder: You can drag and drop your screenshots here...
     validations:
       required: false
   - type: textarea
