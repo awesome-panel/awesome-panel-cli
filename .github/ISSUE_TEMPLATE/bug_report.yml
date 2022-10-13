@@ -1,5 +1,5 @@
 name: "🐛 Bug Report"
-description: You can report issues here.
+description: Report something that does not work as expected
 labels: [
   "bug", "TRIAGE"
 ]
@@ -26,12 +26,24 @@ body:
     validations:
       required: true
   - type: textarea
+    id: requirements
+    attributes:
+      label: "Requirements"
+      description: Please list the relevant requirements including version numbers
+      value: |
+        panel
+      render: bash
+    validations:
+      required: false
+  - type: textarea
     id: code
     attributes:
       label: "Code"
       description: A minimum reproducible example, see https://stackoverflow.com/help/minimal-reproducible-example
       value: |
-        import ...
+        import panel as pn
+
+        pn.extension()
       render: python3
     validations:
       required: false
@@ -45,12 +57,9 @@ body:
     validations:
       required: false
   - type: textarea
-    id: requirements
+    id: additional
     attributes:
-      label: "Requirements"
-      description: Please list the requirements needed including version numbers
-      value: |
-        xyz
-      render: bash
+      label: "Additional Context"
+      description: Any other relevant information that might be helpful
     validations:
       required: false
