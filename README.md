@@ -134,7 +134,7 @@ You can run all tests via
 pn test all
 ```
 
-Please run this command before you `git push` and fix any failing tests.
+Please run this command and fix any failing tests before you `git push`.
 
 ### 🔥 Install the current `master` branch
 
