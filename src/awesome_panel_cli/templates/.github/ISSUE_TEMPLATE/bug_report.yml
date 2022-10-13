@@ -39,7 +39,7 @@ body:
     id: code
     attributes:
       label: "Code"
-      description: A minimum reproducible example, see https://stackoverflow.com/help/minimal-reproducible-example
+      description: A minimum, reproducible example, see https://stackoverflow.com/help/minimal-reproducible-example.
       placeholder: |
         import panel as pn
 
@@ -58,6 +58,14 @@ body:
       render: bash
     validations:
       required: false
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: "Screenshots"
+      description: Please provide any screenshots, .gifs or .mp4s of the issue
+      placeholder: You can drag an drop your screenshots here...
+    validations:
+      required: true
   - type: textarea
     id: additional
     attributes:
