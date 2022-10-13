@@ -64,9 +64,9 @@ body:
     attributes:
       label: "Screenshots"
       description: Please provide any screenshots, .gifs or .mp4s of the issue
-      placeholder: You can drag an drop your screenshots here...
+      placeholder: You can drag and drop your screenshots here...
     validations:
-      required: true
+      required: false
   - type: textarea
     id: additional
     attributes:
