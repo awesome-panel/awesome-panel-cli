@@ -9,7 +9,7 @@ body:
     attributes:
       label: "Description"
       description: Please enter an explicit description of your issue
-      placeholder: Short and explicit description of your incident...
+      placeholder: Short and explicit description of your issue...
     validations:
       required: true
   - type: textarea
@@ -17,7 +17,7 @@ body:
     attributes:
       label: "Reproduction steps"
       description: Please enter an explicit description of your issue
-      value: |
+      placeholder: |
         1. Go to '...'
         2. Click on '....'
         3. Scroll down to '....'
@@ -30,8 +30,8 @@ body:
     attributes:
       label: "Requirements"
       description: Please list the relevant requirements including version numbers
-      value: |
-        panel
+      placeholder: |
+        panel==0.14.0
       render: bash
     validations:
       required: false
@@ -40,7 +40,7 @@ body:
     attributes:
       label: "Code"
       description: A minimum reproducible example, see https://stackoverflow.com/help/minimal-reproducible-example
-      value: |
+      placeholder: |
         import panel as pn
 
         pn.extension()
@@ -48,11 +48,13 @@ body:
     validations:
       required: false
   - type: textarea
-
     id: logs
     attributes:
       label: "Logs"
       description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      placeholder: |
+        2022-10-13 05:59:36,200 Starting Bokeh server version 2.4.3 (running on Tornado 6.2)
+        2022-10-13 05:59:36,212 Bokeh app running at: http://localhost:5006/script
       render: bash
     validations:
       required: false
@@ -63,3 +65,5 @@ body:
       description: Any other relevant information that might be helpful
     validations:
       required: false
+
+
