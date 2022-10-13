@@ -76,3 +76,21 @@ def test_create_examples(tmpdir):
         assert (examples / "notebooks" / "introduction.ipynb").exists()
         assert (examples / "views" / "view_html.py").exists()
         assert (examples / "widgets" / "viewer.py").exists()
+
+
+def test_create_github(tmpdir):
+    """We can create a .github actions folder"""
+    with set_directory(tmpdir):
+        Path(tmpdir / "pyproject.toml").write_text("something", encoding="utf8")
+        create.github_actions()
+        github = Path(".github")
+        assert (github / "workflows" / "tests.yaml").exists()
+
+
+def test_create_binder(tmpdir):
+    """We can create a .binder actions folder"""
+    with set_directory(tmpdir):
+        Path(tmpdir / "pyproject.toml").write_text("something", encoding="utf8")
+        create.binder()
+        github = Path(".binder")
+        assert (github / "requirements.txt").exists()

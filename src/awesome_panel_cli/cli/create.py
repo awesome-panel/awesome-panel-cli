@@ -12,7 +12,7 @@ from cookiecutter.main import cookiecutter
 from rich.console import Console
 from rich.markdown import Markdown
 
-from awesome_panel_cli import config
+from awesome_panel_cli import config, shared
 from awesome_panel_cli.shared import logger, run, set_directory
 
 app = typer.Typer()
@@ -84,6 +84,7 @@ def _print_comments(source_dir):
     ```bash
     git remote add origin https://github.com/<github-user>/{ source_dir.name }.git
     git push -f origin main
+    pn create github-actions
     ```
     """
     )
@@ -130,6 +131,18 @@ def _copy_file(name: Enum, source_dir: Path, postfix: str = ".py"):
     else:
         shutil.copy(source, target)
         logger.info("created: %s", target)
+
+
+def _copy_tree(source, target):
+    if target.exists():
+        logger.error("The folder %s already exists! Please delete it first and rerun.", target)
+        return
+
+    try:
+        shutil.copytree(source, target)
+        logger.info("created: %s", target)
+    except Exception as ex:  # pylint: disable=broad-except
+        logger.exception("Could not create %s folder", target, exc_info=ex)
 
 
 @app.command(name="app")
@@ -212,3 +225,21 @@ def examples(target="examples"):
         if _examples.exists():
             shutil.rmtree(_examples)
             logger.exception("Could not create examples folder", exc_info=ex)
+
+
+@app.command()
+def github_actions():
+    """Populates the .github folder"""
+    _copy_tree(
+        source=config.REFERENCE_GITHUB,
+        target=shared.get_project_root() / ".github",
+    )
+
+
+@app.command()
+def binder():
+    """Populates the .binder folder"""
+    _copy_tree(
+        source=config.REFERENCE_BINDER,
+        target=shared.get_project_root() / ".binder",
+    )
