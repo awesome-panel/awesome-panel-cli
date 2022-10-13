@@ -1,0 +1,6 @@
+-e .['all']
+jedi-language-server
+jupyter_bokeh
+jupyter-vscode-proxy
+pyright
+voila

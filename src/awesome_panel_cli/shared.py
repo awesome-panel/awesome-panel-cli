@@ -56,3 +56,29 @@ def set_directory(path: Path):
         yield
     finally:
         os.chdir(origin)
+
+
+def is_project_root(path) -> bool:
+    """Returns True if the path is a project root
+
+    The criteriea is that it contains pyproject.toml
+    """
+    path = Path(path)
+    return (path / "pyproject.toml").exists()
+
+
+class ProjectRootNotFound(Exception):
+    """The Project Root could not be found"""
+
+
+def get_project_root():
+    """Returns the root of the current project.
+
+    It is the folder where `pyproject.toml` is located"""
+    cwd = Path.cwd()
+    for _ in range(0, 10):
+        if is_project_root(cwd):
+            return cwd
+        cwd = cwd.parent
+        logger.info("Searching for 'pyproject.toml' in %s", cwd)
+    raise ProjectRootNotFound("Could not find project root")
