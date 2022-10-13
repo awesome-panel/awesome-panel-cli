@@ -75,5 +75,3 @@ body:
       placeholder: This is important to fix because...
     validations:
       required: false
-
-

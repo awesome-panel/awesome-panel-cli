@@ -16,12 +16,13 @@ body:
     id: reprod
     attributes:
       label: "Reproduction steps"
-      description: Please enter an explicit description of your issue
+      description: Please list the steps needed to reproduce the issue
       placeholder: |
-        1. Go to '...'
-        2. Click on '....'
-        3. Scroll down to '....'
-        4. See error
+        - Run `panel serve app.py` where `app.py` contains the code below
+        - Open http://localhost:5006/app
+        - Go to '...'
+        - Click on '....'
+        - See error
       render: bash
     validations:
       required: true
@@ -74,5 +75,3 @@ body:
       placeholder: This is important to fix because...
     validations:
       required: false
-
-
