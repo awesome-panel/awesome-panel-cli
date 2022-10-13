@@ -33,21 +33,21 @@ This project draws inspiration from other CLI tools like
 - [django-simple-deploy](https://github.com/ehmatthes/django-simple-deploy)
 - [React Create App](https://reactjs.org/docs/create-a-new-react-app.html)
 
-This project is a part of the [awesome-panel](https://awesome-panel.org) project. 
+## ⭐ Support
 
 Please support [Panel](https://panel.holoviz.org) and
-[awesome-panel](https://awesome-panel.org) by giving the projects a ⭐ on Github:
+[awesome-panel](https://awesome-panel.org) by giving the projects a star on Github:
 
 - [holoviz/panel](https://github.com/holoviz/panel).
 - [awesome-panel/awesome-panel](https://github.com/awesome-panel/awesome-panel).
 
 Thanks
 
-## Contributing
+## ❤️ Contribute
 
 If you are looking to contribute you can find ideas in the [issue tracker](https://github.com/awesome-panel/awesome-panel-cli/issues).
 
-I would ❤️ to support and receive your contributions. Thanks.
+I would love to support and receive your contributions. Thanks.
 
 [![Hacktober Fest](https://github.blog/wp-content/uploads/2022/10/hacktoberfestbanner.jpeg?fit=1200%2C630)](https://github.com/awesome-panel/awesome-panel-cli/issues).
 
