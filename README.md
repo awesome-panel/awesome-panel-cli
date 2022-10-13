@@ -27,11 +27,10 @@ pn create app
 ![Awesome Panel CLI Intro](https://github.com/awesome-panel/awesome-panel-cli/blob/main/assets/videos/awesome-panel-cli-intro-small.gif?raw=true)
 
 This project draws inspiration from other CLI tools like
-
-- [Angular CLI](https://angular.io/cli).
-- [Django management commands](https://www.djangoproject.com/)
-- [django-simple-deploy](https://github.com/ehmatthes/django-simple-deploy)
-- [React Create App](https://reactjs.org/docs/create-a-new-react-app.html)
+[Angular CLI](https://angular.io/cli),
+[Django management commands](https://www.djangoproject.com/),
+[django-simple-deploy](https://github.com/ehmatthes/django-simple-deploy) and
+[React Create App](https://reactjs.org/docs/create-a-new-react-app.html).
 
 ## ⭐ Support
 
@@ -45,7 +44,7 @@ Thanks
 
 ## ❤️ Contribute
 
-If you are looking to contribute you can find ideas in the [issue tracker](https://github.com/awesome-panel/awesome-panel-cli/issues).
+If you are looking to contribute to this project you can find ideas in the [issue tracker](https://github.com/awesome-panel/awesome-panel-cli/issues).
 
 I would love to support and receive your contributions. Thanks.
 
@@ -76,7 +75,7 @@ pip install awesome-panel-cli[all]
 
 You will then have access to a powerful command line interface invoked using the command `pn`.
 
-### How to figure out which commands are available
+### ❓ How to figure out which commands are available
 
 Try running
 
