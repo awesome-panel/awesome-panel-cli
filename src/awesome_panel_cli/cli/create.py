@@ -12,7 +12,7 @@ from cookiecutter.main import cookiecutter
 from rich.console import Console
 from rich.markdown import Markdown
 
-from awesome_panel_cli import config
+from awesome_panel_cli import config, shared
 from awesome_panel_cli.shared import logger, run, set_directory
 
 app = typer.Typer()
@@ -232,7 +232,7 @@ def github_actions():
     """Populates the .github folder"""
     _copy_tree(
         source=config.REFERENCE_GITHUB,
-        target=config.get_project_root() / ".github",
+        target=shared.get_project_root() / ".github",
     )
 
 
@@ -241,5 +241,5 @@ def binder():
     """Populates the .binder folder"""
     _copy_tree(
         source=config.REFERENCE_BINDER,
-        target=config.get_project_root() / ".binder",
+        target=shared.get_project_root() / ".binder",
     )
