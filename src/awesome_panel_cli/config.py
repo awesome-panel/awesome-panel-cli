@@ -3,6 +3,8 @@ from enum import Enum
 from pathlib import Path
 from typing import List, Optional, Union
 
+from awesome_panel_cli.shared import logger
+
 AUTOFLAKE_IMPORTS = "pytest,pandas,numpy,plotly,matplotlib,bokeh,dash,urllib3,param,panel,holoviews"
 TEST_FOLDERS = "tests"
 TEST_RESULTS_FOLDER = "test_results"
@@ -15,8 +17,35 @@ REFERENCE_APPS = TEMPLATES / "apps"
 REFERENCE_VIEWS = TEMPLATES / "views"
 REFERENCE_NOTEBOOKS = TEMPLATES / "notebooks"
 REFERENCE_GITHUB = TEMPLATES / ".github"
+REFERENCE_BINDER = TEMPLATES / ".binder"
 REFERENCE_PROJECT = TEMPLATES / "project"
 REFERENCE_WIDGETS = TEMPLATES / "widgets"
+
+
+def is_project_root(path) -> bool:
+    """Returns True if the path is a project root
+
+    The criteriea is that it contains pyproject.toml
+    """
+    path = Path(path)
+    return (path / "pyproject.toml").exists()
+
+
+class ProjectRootNotFound(Exception):
+    """The Project Root could not be found"""
+
+
+def get_project_root():
+    """Returns the root of the current project.
+
+    It is the folder where `pyproject.toml` is located"""
+    cwd = Path.cwd()
+    for _ in range(0, 10):
+        if is_project_root(cwd):
+            return cwd
+        cwd = cwd.parent
+        logger.info("Searching for 'pyproject.toml' in %s", cwd)
+    raise ProjectRootNotFound("Could not find project root")
 
 
 def _to_cwd_path(cwd: Optional[Union[str, Path]] = None) -> Path:

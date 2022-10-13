@@ -133,6 +133,18 @@ def _copy_file(name: Enum, source_dir: Path, postfix: str = ".py"):
         logger.info("created: %s", target)
 
 
+def _copy_tree(source, target):
+    if target.exists():
+        logger.error("The folder %s already exists! Please delete it first and rerun.", target)
+        return
+
+    try:
+        shutil.copytree(source, target)
+        logger.info("created: %s", target)
+    except Exception as ex:  # pylint: disable=broad-except
+        logger.exception("Could not create %s folder", target, exc_info=ex)
+
+
 @app.command(name="app")
 def app_(name: config.App = config.App.HELLO_WORLD):
     """Creates a new app file in the current working directory
@@ -218,15 +230,16 @@ def examples(target="examples"):
 @app.command()
 def github_actions():
     """Populates the .github folder"""
-    target = Path.cwd() / ".github"
-    source = config.REFERENCE_GITHUB
+    _copy_tree(
+        source=config.REFERENCE_GITHUB,
+        target=config.get_project_root() / ".github",
+    )
 
-    if target.exists():
-        logger.error("The folder %s already exists! Please delete it first and rerun.", target)
-        return
 
-    try:
-        shutil.copytree(source, target)
-        logger.info("created: %s", target)
-    except Exception as ex:  # pylint: disable=broad-except
-        logger.exception("Could not create examples folder", exc_info=ex)
+@app.command()
+def binder():
+    """Populates the .binder folder"""
+    _copy_tree(
+        source=config.REFERENCE_BINDER,
+        target=config.get_project_root() / ".binder",
+    )
