@@ -1,8 +1,7 @@
 name: "🐛 Bug Report"
-description: Report a bug.
-title: "🐛 [BUG] - <title>"
+description: if you have discovered an issue you can report it here.
 labels: [
-  "bug"
+  "bug", "TRIAGE"
 ]
 body:
   - type: textarea
@@ -11,24 +10,6 @@ body:
       label: "Description"
       description: Please enter an explicit description of your issue
       placeholder: Short and explicit description of your incident...
-    validations:
-      required: true
-  - type: input
-    id: reprod-url
-    attributes:
-      label: "Reproduction URL"
-      description: Please enter your GitHub URL to provide a reproduction of the issue
-      placeholder: ex. https://github.com/USERNAME/REPO-NAME
-    validations:
-      required: true
-  - type: textarea
-    id: requirements
-    attributes:
-      label: "Requirements"
-      description: Please list the requirements needed including version numbers
-      value: |
-        xyz
-      render: bash
     validations:
       required: true
   - type: textarea
@@ -48,27 +29,28 @@ body:
     id: code
     attributes:
       label: "Code"
-      description: A minimum reproducible example
+      description: A minimum reproducible example, see https://stackoverflow.com/help/minimal-reproducible-example
       value: |
         import ...
       render: python3
     validations:
       required: false
   - type: textarea
-    id: screenshot
-    attributes:
-      label: "Screenshots"
-      description: If applicable, add screenshots to help explain your problem.
-      value: |
-        ![DESCRIPTION](LINK.png)
-      render: bash
-    validations:
-      required: false
-  - type: textarea
+
     id: logs
     attributes:
       label: "Logs"
       description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: bash
+    validations:
+      required: false
+  - type: textarea
+    id: requirements
+    attributes:
+      label: "Requirements"
+      description: Please list the requirements needed including version numbers
+      value: |
+        xyz
       render: bash
     validations:
       required: false
