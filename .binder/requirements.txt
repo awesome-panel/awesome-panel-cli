@@ -1,6 +1,6 @@
 -e .['all']
+jedi-language-server
 jupyter_bokeh
 jupyter-vscode-proxy
-jedi-language-server
 pyright
-voila>=0.2.10
+voila
