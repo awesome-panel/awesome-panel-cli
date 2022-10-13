@@ -8,7 +8,7 @@ body:
     id: description
     attributes:
       label: "Description"
-      description: Please enter an explicit description of your issue
+      description: Please enter an explicit description of your issue. Supplementary screenshots or videos are much appreciated.
       placeholder: Short and explicit description of your issue...
     validations:
       required: true
@@ -16,24 +16,15 @@ body:
     id: reprod
     attributes:
       label: "Reproduction steps"
-      description: Please list the steps needed to reproduce the issue
+      description: Please list the steps needed to reproduce the issue. . Supplementary screenshots or videos are much appreciated.
       placeholder: |
         - Run `panel serve app.py` where `app.py` contains the code below
         - Open http://localhost:5006/app
         - Go to '...'
         - Click on '....'
         - See error
-      render: bash
     validations:
       required: true
-  - type: textarea
-    id: screenshots
-    attributes:
-      label: "Screenshots"
-      description: Please provide any screenshots, .gifs or .mp4s of the issue
-      placeholder: You can drag and drop your screenshots here...
-    validations:
-      required: false
   - type: textarea
     id: requirements
     attributes:
