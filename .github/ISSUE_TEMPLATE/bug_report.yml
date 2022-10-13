@@ -1,5 +1,5 @@
 name: "🐛 Bug Report"
-description: if you have discovered an issue you can report it here.
+description: You can report issues here.
 labels: [
   "bug", "TRIAGE"
 ]
