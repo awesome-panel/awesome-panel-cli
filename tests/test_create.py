@@ -1,18 +1,11 @@
 """We can create Projects"""
 from pathlib import Path
 
-import pytest
-
 from awesome_panel_cli import config
 from awesome_panel_cli.cli import create
 from awesome_panel_cli.shared import set_directory
 
 # pylint: disable=protected-access
-
-@pytest.fixture()
-def tmp_project_dir(tmpdir):
-    Path(tmpdir / "pyproject.toml").write_text("something", encoding="utf8")
-    return tmpdir
 
 
 def test_create_project_file(tmpdir):
@@ -102,10 +95,11 @@ def test_create_binder(tmpdir):
         github = Path(".binder")
         assert (github / "requirements.txt").exists()
 
+
 def test_create_license(tmp_project_dir):
     """We can create a license"""
     source = config.License.MIT
     target = Path("LICENSE")
     with set_directory(tmp_project_dir):
-        create.license(source)
+        create.license_(source)
         assert target.exists()

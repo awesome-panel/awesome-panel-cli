@@ -244,8 +244,9 @@ def binder():
         target=shared.get_project_root() / ".binder",
     )
 
+
 @app.command()
-def license(name: config.License = config.License.MIT):
+def license_(name: config.License = config.License.MIT):
     """Creates a new license file in the project root.
 
     Args:

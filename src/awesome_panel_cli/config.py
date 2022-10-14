@@ -103,6 +103,7 @@ class Widget(str, Enum):
 
     VIEWER = "viewer"
 
+
 class License(str, Enum):
     """Represents licenses"""
 
