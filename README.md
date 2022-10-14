@@ -1,12 +1,14 @@
-# 🚪 Awesome Panel CLI
-
 ![Python Versions](https://img.shields.io/badge/3.7%20%7C%203.8%20%7C%203.9%20%7C%203.10-blue)
+![Test Results](https://github.com/awesome-panel/awesome-panel-cli/actions/workflows/tests.yaml/badge.svg?branch=main)
 [![codecov](https://codecov.io/gh/awesome-panel/awesome-panel-cli/branch/main/graph/badge.svg?token=MXANQHSUUV)](https://codecov.io/gh/awesome-panel/awesome-panel-cli)
-[![License](https://img.shields.io/badge/License-MIT%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License](https://img.shields.io/badge/License-MIT%202.0-blue.svg)](https://opensource.org/licenses/MIT)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/awesome-panel/awesome-panel-cli/feature/binder)
 [![Follow on Twitter](https://img.shields.io/twitter/follow/MarcSkovMadsen.svg?style=social)](https://twitter.com/MarcSkovMadsen)
+[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/marcskovmadsen)
 
 ⚠️ THIS PROJECT IS IN AN ALPHA STATE AND WILL CHANGE. USE IT AT YOUR OWN RISK.
+
+# 💻 Awesome Panel CLI
 
 We want to
 
@@ -44,16 +46,11 @@ Thanks
 
 ## ❤️ Contribute
 
-If you are looking to contribute to this project you can find ideas in the [issue tracker](https://github.com/awesome-panel/awesome-panel-cli/issues).
+If you are looking to contribute to this project you can find ideas in the [issue tracker](https://github.com/awesome-panel/awesome-panel-cli/issues). To get started check out the [DEVELOPER_GUIDE](DEVELOPER_GUIDE.md).
 
 I would love to support and receive your contributions. Thanks.
 
 [![Hacktober Fest](https://github.blog/wp-content/uploads/2022/10/hacktoberfestbanner.jpeg?fit=1200%2C630)](https://github.com/awesome-panel/awesome-panel-cli/issues).
-
-## 🧳 Prerequisites
-
-- A working [Python](https://www.python.org/downloads/) environment.
-- [Git CLI](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 ## 📙 How to
 
@@ -108,33 +105,6 @@ pn create project --help
 ```
 
 ![pn create project --help](https://github.com/awesome-panel/awesome-panel-cli/blob/main/assets/images/pn-create-project-help.png?raw=true)
-
-### 💻 Install for Development
-
-To install for development you will need a fresh and activated virtual environment.
-
-Then run
-
-```bash
-git clone https://github.com/awesome-panel/awesome-panel-cli.git
-cd awesome-panel-cli
-pip install pip -U
-pip install -e .[all]
-```
-
-Then you can see the available commands via
-
-```bash
-pn --help
-```
-
-You can run all tests via
-
-```bash
-pn test all
-```
-
-Please run this command and fix any failing tests before you `git push`.
 
 ### 🔥 Install the current `master` branch
 

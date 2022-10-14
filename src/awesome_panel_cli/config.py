@@ -12,11 +12,12 @@ LOGGING_FORMAT = "%(message)s"
 ROOT = Path(__file__).parent
 TEMPLATES = ROOT / "templates"
 REFERENCE_APPS = TEMPLATES / "apps"
-REFERENCE_VIEWS = TEMPLATES / "views"
-REFERENCE_NOTEBOOKS = TEMPLATES / "notebooks"
-REFERENCE_GITHUB = TEMPLATES / ".github"
 REFERENCE_BINDER = TEMPLATES / ".binder"
+REFERENCE_GITHUB = TEMPLATES / ".github"
+REFERENCE_LICENSES = TEMPLATES / "licenses"
+REFERENCE_NOTEBOOKS = TEMPLATES / "notebooks"
 REFERENCE_PROJECT = TEMPLATES / "project"
+REFERENCE_VIEWS = TEMPLATES / "views"
 REFERENCE_WIDGETS = TEMPLATES / "widgets"
 
 
@@ -101,3 +102,8 @@ class Widget(str, Enum):
     """Represents reference components"""
 
     VIEWER = "viewer"
+
+class License(str, Enum):
+    """Represents licenses"""
+
+    MIT = "mit"

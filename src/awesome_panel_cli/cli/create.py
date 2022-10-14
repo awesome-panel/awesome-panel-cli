@@ -243,3 +243,20 @@ def binder():
         source=config.REFERENCE_BINDER,
         target=shared.get_project_root() / ".binder",
     )
+
+@app.command()
+def license(name: config.License = config.License.MIT):
+    """Creates a new license file in the project root.
+
+    Args:
+        name: The name of the license. Defaults to 'MIT'.
+    """
+    file_name = name.name.lower()
+    source = config.REFERENCE_LICENSES / file_name
+    target = shared.get_project_root()
+    target = target / "LICENSE"
+    if target.exists():
+        logger.error("The file %s already exists!", target)
+    else:
+        shutil.copy(source, target)
+        logger.info("created: %s", target)
