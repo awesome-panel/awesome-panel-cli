@@ -81,7 +81,7 @@ def pytest(
         command.extend(
             [
                 "-m",
-                "'not slow'",
+                "not slow",
             ]
         )
     if report:

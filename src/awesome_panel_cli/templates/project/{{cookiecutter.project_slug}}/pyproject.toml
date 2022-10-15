@@ -6,7 +6,7 @@ name = "{{ cookiecutter.project_slug }}"
 description = "This purpose of this project ..."
 readme = "README.md"
 requires-python = ">=3.7"
-keywords = ["python", "holoviz", "panel", "dataviz", "dataapp", , "dashboard", "datascience", "analytics"]
+keywords = ["python", "holoviz", "panel", "dataviz", "dataapp", "dashboard", "datascience", "analytics"]
 license = {file = "LICENSE"}
 classifiers = [
     "License :: OSI Approved :: MIT License",

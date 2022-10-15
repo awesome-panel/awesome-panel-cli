@@ -1,6 +1,8 @@
 """We can create Projects"""
 from pathlib import Path
 
+import pytest
+
 from awesome_panel_cli import config
 from awesome_panel_cli.cli import create
 from awesome_panel_cli.shared import set_directory
@@ -20,6 +22,15 @@ def test_git_init(tmpdir):
     with set_directory(tmpdir):
         create._git_init()
         assert Path(".git").exists()
+
+
+@pytest.mark.slow()
+def test_create_project(tmpdir, caplog):
+    """We can create a project"""
+    with set_directory(tmpdir):
+        create._project(no_input=True)
+        assert not caplog.records
+        assert Path("new-project/.venv").exists()
 
 
 def test_create_app(tmpdir):
