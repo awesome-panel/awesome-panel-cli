@@ -91,8 +91,7 @@ def _print_comments(source_dir):
     console.print(markdown)
 
 
-@app.command()
-def project(virtual_env: bool = True):
+def _project(virtual_env: bool = True, no_input=False):
     """Creates a new best practice python project for developing data apps
 
     This will create a new project in a subfolder of the current directory.
@@ -103,7 +102,7 @@ def project(virtual_env: bool = True):
     source_dir: None | Path = None
     with tempfile.TemporaryDirectory() as tmpdir:
         try:
-            tmp_source_dir = _create_project_files(output_dir=tmpdir)
+            tmp_source_dir = _create_project_files(output_dir=tmpdir, no_input=no_input)
             with set_directory(tmp_source_dir):
                 _git_init()
             shutil.copytree(tmp_source_dir, tmp_source_dir.name)
@@ -119,6 +118,18 @@ def project(virtual_env: bool = True):
             if isinstance(source_dir, Path) and source_dir.exists():
                 shutil.rmtree(source_dir)
             logger.exception("The Project was NOT created", exc_info=ex)
+
+
+@app.command()
+def project(virtual_env: bool = True):
+    """Creates a new best practice python project for developing data apps
+
+    This will create a new project in a subfolder of the current directory.
+
+    This includes a virtual environment, a pyproject.toml file, a starter apps/app.py file,
+    a starter tests/test_hello.py file and more
+    """
+    _project(virtual_env=virtual_env, no_input=False)
 
 
 def _copy_file(name: Enum, source_dir: Path, postfix: str = ".py"):
