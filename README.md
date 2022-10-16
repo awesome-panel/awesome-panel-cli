@@ -63,6 +63,8 @@ Serve the examples
 pn hello
 ```
 
+![pn hello](https://github.com/awesome-panel/awesome-panel-cli/blob/main/assets/videos/pn-hello.gif?raw=true)
+
 ### ❓ Check out the CLI commands
 
 Try running the commands below
