@@ -1,4 +1,6 @@
 """Shared functionality for tasks"""
+from __future__ import annotations
+
 import logging
 import os
 import subprocess
@@ -40,7 +42,7 @@ def run(command: List[str]) -> bool:
 
 
 @contextmanager
-def set_directory(path: Path):
+def set_directory(path: str | Path):
     """Sets the cwd within the context
 
     Args:

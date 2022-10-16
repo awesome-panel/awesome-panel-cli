@@ -69,21 +69,20 @@ def _print_comments(source_dir):
     panel serve apps/app.py --autoreload
     ```
 
-    If you want to serve the Awesome Panel reference apps or notebooks you will need to install
-
-    ```bash
-    pip install awesome-panel-cli[all] -U
-    ```
-
     If you want to release your project to [Github](https://github.com/) you can do so by
 
-    Creating a new, empty repository, i.e. with no `README.md`, `LICENSE` or `.gitignore` files.
+    Creating a new, empty repository on Github
 
     Then running
 
     ```bash
     git remote add origin https://github.com/<github-user>/{ source_dir.name }.git
     git push -f origin main
+    ```
+
+    If you want to add *github actions* to your project you can run
+
+    ```bash
     pn create github-actions
     ```
     """
@@ -157,7 +156,7 @@ def _copy_tree(source, target):
 
 
 @app.command(name="app")
-def app_(name: config.App = config.App.HELLO_WORLD):
+def app_(name: config.App = typer.Argument(config.App.HELLO_WORLD)):
     """Creates a new app file in the current working directory
 
     Args:
@@ -170,7 +169,7 @@ def app_(name: config.App = config.App.HELLO_WORLD):
 
 
 @app.command()
-def notebook(name: config.Notebook = config.Notebook.INTRODUCTION):
+def notebook(name: config.Notebook = typer.Argument(config.Notebook.INTRODUCTION)):
     """Creates a new notebook file in the current working directory
 
     Args:
@@ -180,7 +179,7 @@ def notebook(name: config.Notebook = config.Notebook.INTRODUCTION):
 
 
 @app.command()
-def view(name: config.View = config.View.VIEW):
+def view(name: config.View = typer.Argument(config.View.VIEW)):
     """Creates a new view file in the current working directory
 
     A view is just a function returning some object that Panel can display.
@@ -196,7 +195,7 @@ def view(name: config.View = config.View.VIEW):
 
 
 @app.command()
-def widget(name: config.Widget = config.Widget.VIEWER, example: bool = False):
+def widget(name: config.Widget = typer.Argument(config.Widget.VIEWER), example: bool = False):
     """Creates a new widget file in the current working directory
 
     A widget is a Parameterized Class with a `value` parameter. You can set the value. The value
@@ -257,7 +256,7 @@ def binder():
 
 
 @app.command()
-def license_(name: config.License = config.License.MIT):
+def license_(name: config.License = typer.Argument(config.License.MIT)):
     """Creates a new license file in the project root.
 
     Args:
