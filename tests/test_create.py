@@ -78,17 +78,6 @@ def test_create_widget_example(tmpdir):
         assert target.exists()
 
 
-def test_create_examples(tmpdir):
-    """We can create an examples folder"""
-    with set_directory(tmpdir):
-        create.examples()
-        examples = Path("examples")
-        assert (examples / "apps" / "hello_world.py").exists()
-        assert (examples / "notebooks" / "introduction.ipynb").exists()
-        assert (examples / "views" / "view_html.py").exists()
-        assert (examples / "widgets" / "viewer.py").exists()
-
-
 def test_create_github(tmpdir):
     """We can create a .github actions folder"""
     with set_directory(tmpdir):
