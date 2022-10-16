@@ -35,7 +35,10 @@ classifiers = [
     "Topic :: Software Development :: Libraries",
 ]
 dependencies = [
-    "typer", "rich", "gitdir"
+    "cookiecutter",
+    "gitdir",
+    "rich",
+    "typer",
 ]
 dynamic = ["version"]
 
@@ -49,7 +52,6 @@ dev = [
     "bandit",
     "black[jupyter]",
     "build",
-    "cookiecutter",
     "mypy",
     "pylint",
     "pylint2junit",
@@ -79,7 +81,6 @@ all = [
     "bandit",
     "black[jupyter]",
     "build",
-    "cookiecutter",
     "mypy",
     "pylint",
     "pylint2junit",
