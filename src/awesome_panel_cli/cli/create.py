@@ -23,6 +23,7 @@ def _create_project_files(
     no_input=False,
 ) -> Path:
     logger.info("Creating project files from cookiecutter template")
+
     project_dir = cookiecutter(
         str(config.REFERENCE_PROJECT), no_input=no_input, output_dir=output_dir
     )

@@ -21,7 +21,6 @@ This project draws inspiration from other CLI tools like
 
 ## 🖥️ Monitor
 
-
 [![PyPI version](https://badge.fury.io/py/awesome-panel-cli.svg)](https://pypi.org/project/awesome-panel-cli/)
 [![Downloads](https://pepy.tech/badge/awesome-panel-cli/month)](https://pepy.tech/project/awesome-panel-cli)
 ![Python Versions](https://img.shields.io/badge/python-3.7%20%7C%203.8%20%7C%203.9%20%7C%203.10-blue)

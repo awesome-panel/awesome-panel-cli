@@ -38,20 +38,26 @@ def examples_other(source: str):
         source: A source repository. For example `panel-highcharts` or
             `awesome-panel/panel-highcharts`.
     """
-    output_dir = _get_examples_dir(source).absolute()
+    output_dir = _get_examples_dir(source)
     if output_dir.exists():
         logger.info("Removing %s", output_dir)
         shutil.rmtree(output_dir)
     output_dir.parent.mkdir(exist_ok=True, parents=True)
 
+    output_dir_absolute = output_dir.absolute()
     examples_url = _get_examples_url(source)
     with tempfile.TemporaryDirectory() as tmpdir:
         with set_directory(tmpdir):
             download(examples_url)
 
             tmp_src = examples_url.split("main/")[-1]
-            shutil.copytree(tmp_src, output_dir)
-            logger.info("Created %s", output_dir)
+            shutil.copytree(tmp_src, output_dir_absolute)
+
+    examples = output_dir / "examples"
+    if examples.exists() and not any(examples.iterdir()):
+        examples.rmdir()
+
+    logger.info("Created %s", output_dir)
 
 
 def examples_awesome_panel_cli():
