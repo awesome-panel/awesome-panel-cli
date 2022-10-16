@@ -1,15 +1,3 @@
-[![PyPI version](https://badge.fury.io/py/awesome-panel-cli.svg)](https://pypi.org/project/awesome-panel-cli/)
-[![Downloads](https://pepy.tech/badge/awesome-panel-cli/month)](https://pepy.tech/project/awesome-panel-cli)
-![Python Versions](https://img.shields.io/badge/python-3.7%20%7C%203.8%20%7C%203.9%20%7C%203.10-blue)
-![Test Results](https://github.com/awesome-panel/awesome-panel-cli/actions/workflows/tests.yaml/badge.svg?branch=main)
-[![codecov](https://codecov.io/gh/awesome-panel/awesome-panel-cli/branch/main/graph/badge.svg?token=MXANQHSUUV)](https://codecov.io/gh/awesome-panel/awesome-panel-cli)
-[![License](https://img.shields.io/badge/License-MIT%202.0-blue.svg)](https://opensource.org/licenses/MIT)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/awesome-panel/awesome-panel-cli/feature/binder)
-[![Follow on Twitter](https://img.shields.io/twitter/follow/MarcSkovMadsen.svg?style=social)](https://twitter.com/MarcSkovMadsen)
-[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/marcskovmadsen)
-
-⚠️ THIS PROJECT IS IN AN ALPHA STATE AND WILL CHANGE. USE IT AT YOUR OWN RISK.
-
 # ✨ Awesome Panel CLI
 
 We want to
@@ -28,6 +16,21 @@ This project draws inspiration from other CLI tools like
 [Django management commands](https://www.djangoproject.com/),
 [django-simple-deploy](https://github.com/ehmatthes/django-simple-deploy) and
 [React Create App](https://reactjs.org/docs/create-a-new-react-app.html).
+
+⚠️ THIS PROJECT IS IN AN ALPHA STATE AND WILL CHANGE. USE IT AT YOUR OWN RISK.
+
+## 🖥️ Monitor
+
+
+[![PyPI version](https://badge.fury.io/py/awesome-panel-cli.svg)](https://pypi.org/project/awesome-panel-cli/)
+[![Downloads](https://pepy.tech/badge/awesome-panel-cli/month)](https://pepy.tech/project/awesome-panel-cli)
+![Python Versions](https://img.shields.io/badge/python-3.7%20%7C%203.8%20%7C%203.9%20%7C%203.10-blue)
+![Test Results](https://github.com/awesome-panel/awesome-panel-cli/actions/workflows/tests.yaml/badge.svg?branch=main)
+[![codecov](https://codecov.io/gh/awesome-panel/awesome-panel-cli/branch/main/graph/badge.svg?token=MXANQHSUUV)](https://codecov.io/gh/awesome-panel/awesome-panel-cli)
+[![License](https://img.shields.io/badge/License-MIT%202.0-blue.svg)](https://opensource.org/licenses/MIT)
+
+[![Follow on Twitter](https://img.shields.io/twitter/follow/MarcSkovMadsen.svg?style=social)](https://twitter.com/MarcSkovMadsen)
+[![Follow on LinkedIn](https://img.shields.io/badge/linked-in-blue)](https://www.linkedin.com/in/marcskovmadsen)
 
 ## ⭐ Support
 
@@ -65,6 +68,12 @@ pn hello
 
 ![pn hello](https://github.com/awesome-panel/awesome-panel-cli/blob/main/assets/videos/pn-hello.gif?raw=true)
 
+### 📒 Get started on Binder
+
+Click the button
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/awesome-panel/awesome-panel-cli/feature/binder)
+
 ### ❓ Check out the CLI commands
 
 Try running the commands below
@@ -87,7 +96,7 @@ pn create app --help
 
 ![pn create app --help](https://github.com/awesome-panel/awesome-panel-cli/blob/main/assets/images/pn-create-app-help.png?raw=true)
 
-### 🎁 How to create an app
+### 🎁 Create an app
 
 Run
 
