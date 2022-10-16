@@ -213,31 +213,6 @@ def widget(name: config.Widget = typer.Argument(config.Widget.VIEWER), example: 
 
 
 @app.command()
-def examples(target="examples"):
-    """Creates an examples folder with all the Awesome Panel reference examples"""
-    _examples = Path.cwd() / target
-    if _examples.exists():
-        logger.error("The folder %s already exists! Please delete it first and rerun.", _examples)
-        return
-
-    try:
-        for _source, _target_dir in [
-            (config.REFERENCE_APPS, "apps"),
-            (config.REFERENCE_NOTEBOOKS, "notebooks"),
-            (config.REFERENCE_VIEWS, "views"),
-            (config.REFERENCE_WIDGETS, "widgets"),
-        ]:
-            _target = _examples / _target_dir
-
-            shutil.copytree(_source, _target)
-        logger.info("created: %s", _target)
-    except Exception as ex:  # pylint: disable=broad-except
-        if _examples.exists():
-            shutil.rmtree(_examples)
-            logger.exception("Could not create examples folder", exc_info=ex)
-
-
-@app.command()
 def github_actions():
     """Populates the .github folder"""
     _copy_tree(
