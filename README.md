@@ -85,25 +85,21 @@ pn create app --help
 
 ![pn create app --help](https://github.com/awesome-panel/awesome-panel-cli/blob/main/assets/images/pn-create-app-help.png?raw=true)
 
-```bash
-pn create app streaming_indicators
-```
-
-![Streaming Indicators](https://github.com/awesome-panel/awesome-panel-cli/blob/main/assets/videos/streaming_indicators.gif?raw=true)
-
 ### 🎁 How to create an app
 
 Run
 
 ```bash
-pn create app streaming
+pn create app streaming_indicators
 ```
 
 Serve
 
 ```bash
-panel serve streaming.py
+panel serve streaming_indicators.py
 ```
+
+![Streaming Indicators](https://github.com/awesome-panel/awesome-panel-cli/blob/main/assets/videos/streaming_indicators.gif?raw=true)
 
 ### 🔥 Install the current `master` branch
 
