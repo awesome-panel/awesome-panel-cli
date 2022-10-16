@@ -1,6 +1,27 @@
-# 🚪 Introduction {{ cookiecutter.project_slug }}
+# ✨ {{ cookiecutter.project_slug }}
 
-This purpose of this project ...
+We want to
+
+- INSERT THE WHY
+
+We provide
+
+- INSERT THE WHAT
+
+You can install and use the package as simple as.
+
+```bash
+pip install {{ cookiecutter.project_slug }}
+```
+
+```python
+import {{ cookiecutter.package_slug }}
+INSERT A SHORT EXAMPLE
+```
+
+![Project Intro](assets/videos/project-intro.gif)
+
+REPLACE THE INTRO VIDEO
 
 ## ⭐ Support
 
@@ -31,4 +52,3 @@ You can install the package via
 ```bash
 pip install {{ cookiecutter.project_slug }}
 ```
-

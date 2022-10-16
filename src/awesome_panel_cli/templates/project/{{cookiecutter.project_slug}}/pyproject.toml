@@ -3,7 +3,7 @@ requires = ["setuptools",]
 build-backend = "setuptools.build_meta"
 [project]
 name = "{{ cookiecutter.project_slug }}"
-description = "This purpose of this project ..."
+description = "This package makes it super simple to do exploratory data analysis and develop high-quality Panel data apps ..."
 readme = "README.md"
 requires-python = ">=3.7"
 keywords = ["python", "holoviz", "panel", "dataviz", "dataapp", "dashboard", "datascience", "analytics"]
@@ -45,7 +45,7 @@ authors = [
 ]
 
 [project.optional-dependencies]
-dev = []
+dev = ["awesome-panel-cli"]
 
 [project.urls]
 repository = "https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.project_slug }}"
@@ -82,6 +82,7 @@ module = [
     "holoviews.*",
     "hvplot.*",
     "param.*",
+    "pyviz_comms.*",
 ]
 ignore_missing_imports = true
 

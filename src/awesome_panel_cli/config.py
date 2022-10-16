@@ -75,7 +75,7 @@ class App(str, Enum):
     ALTAIR_STARTER = "altair"
     CROSS_FILTERING = "cross_filtering"
     HELLO_WORLD = "hello_world"
-    STREAMING_INDICATORS = "streaming"
+    STREAMING_INDICATORS = "streaming_indicators"
 
 
 class Notebook(str, Enum):

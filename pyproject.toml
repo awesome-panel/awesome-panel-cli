@@ -35,6 +35,16 @@ classifiers = [
     "Topic :: Software Development :: Libraries",
 ]
 dependencies = [
+    "typer", "rich", "gitdir"
+]
+dynamic = ["version"]
+
+authors = [
+    {name = "awesome-panel"}
+]
+
+[project.optional-dependencies]
+dev = [
     "autoflake",
     "bandit",
     "black[jupyter]",
@@ -54,16 +64,44 @@ dependencies = [
     "types-setuptools",
     "wheel",
 ]
-dynamic = ["version"]
-
-authors = [
-    {name = "awesome-panel"}
+examples = [
+    "altair",
+    "hvplot",
+    "matplotlib",
+    "notebook",
+    "pandas",
+    "panel",
+    "vega-datasets",   
 ]
-
-[project.optional-dependencies]
-dev = []
-all = ["pandas", "matplotlib", "hvplot", "shapely", "jupyterlab", "altair", "vega-datasets"]
-
+all = [
+    # dev
+    "autoflake",
+    "bandit",
+    "black[jupyter]",
+    "build",
+    "cookiecutter",
+    "mypy",
+    "pylint",
+    "pylint2junit",
+    "pytest-cov",
+    "pytest-mock",
+    "pytest",
+    "toml",
+    "twine",
+    "typer[all]",
+    "types-invoke",
+    "types-requests",
+    "types-setuptools",
+    "wheel",
+    # examples
+    "altair",
+    "hvplot",
+    "matplotlib",
+    "notebook",
+    "pandas",
+    "panel",
+    "vega-datasets",
+]
 [project.urls]
 repository = "https://github.com/awesome-panel/awesome-panel-cli"
 
@@ -108,6 +146,7 @@ module = [
     "altair.*",
     "bokeh.*",
     "cookiecutter.*",
+    "gitdir.*",
     "holoviews.*",
     "hvplot.*",
     "pyparsing.*",
