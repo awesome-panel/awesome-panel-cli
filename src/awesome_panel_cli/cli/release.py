@@ -22,5 +22,7 @@ def python_package(version: str, test: bool = False):
                 "testpypi",
             ]
         )
-    run(command=command)
-    logger.info("Package released with with success")
+    if run(command=command):
+        logger.info("Package released with success")
+    else:
+        logger.error("Package NOT released")
