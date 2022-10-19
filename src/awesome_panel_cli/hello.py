@@ -1,8 +1,11 @@
 """Functionality for other awesome-panel packages to enable examples and hello cli commands"""
 from __future__ import annotations
 
+import os
 import shutil
 import tempfile
+import urllib.error
+import urllib.request
 from pathlib import Path
 
 from gitdir.gitdir import download
@@ -48,7 +51,10 @@ def examples_other(source: str):
     examples_url = _get_examples_url(source)
     with tempfile.TemporaryDirectory() as tmpdir:
         with set_directory(tmpdir):
-            download(examples_url)
+            try:
+                download(examples_url)
+            except urllib.error.HTTPError:
+                download(examples_url.replace("main", "master"))
 
             tmp_src = examples_url.split("main/")[-1]
             shutil.copytree(tmp_src, output_dir_absolute)
@@ -88,6 +94,12 @@ def panel_serve(source: str = "awesome-panel-cli", port: int = 5007):
     output_dir = _get_examples_dir(source)
     scripts = map(str, Path(output_dir).rglob("*.py"))
     notebooks = map(str, Path(output_dir).rglob("*.ipynb"))
+
+    command = ["panel", "serve", "--port", str(port), *scripts, *notebooks]
+    if source in ["awesome-panel", "awesome-panel/awesome-panel"]:
+        command.extend(["--index", "home.py"])
+    if os.name != "nt":
+        command.extend(["--num-procs", "4"])
     # We don't use threads currently due to https://github.com/holoviz/panel/issues/4010
     # "--num-threads", "4",
-    run(["panel", "serve", "--port", str(port), *scripts, *notebooks])
+    run(command=command)

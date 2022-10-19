@@ -35,4 +35,3 @@ def test_hello_panel_chemistry(spy, tmpdir):
         assert result.exit_code == 0
         assert _get_examples_dir("panel-chemistry").exists()
         spy.assert_called_once()
-        assert {"panel", "serve"}.issubset(set(spy.call_args.args[0]))

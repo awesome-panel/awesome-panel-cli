@@ -231,7 +231,7 @@ def binder():
     )
 
 
-@app.command()
+@app.command(name="license")
 def license_(name: config.License = typer.Argument(config.License.MIT)):
     """Creates a new license file in the project root.
 

@@ -68,6 +68,8 @@ pn create app --help
 
 ![pn create app --help](https://github.com/awesome-panel/awesome-panel-cli/blob/main/assets/images/pn-create-app-help.png?raw=true)
 
+You can find the full list of commands in the [docs.md](docs.md) file.
+
 ## 🎁 Create an app
 
 Run

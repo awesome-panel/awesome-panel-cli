@@ -34,9 +34,8 @@ classifiers = [
     "Topic :: Software Development :: Libraries",
 ]
 dependencies = [
-    "hvplot",
-    "pandas",
-    "panel",
+    "bokeh<3.0",
+    "panel<1.0",
 ]
 dynamic = ["version"]
 
@@ -45,7 +44,13 @@ authors = [
 ]
 
 [project.optional-dependencies]
-dev = ["awesome-panel-cli"]
+dev = [
+    "awesome-panel-cli[dev]"
+]
+examples = [
+    "awesome-panel-cli",
+    "notebook",   
+]
 
 [project.urls]
 repository = "https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.project_slug }}"
@@ -68,6 +73,10 @@ max-args=10
 
 [tool.pylint.format]
 max-module-lines = 1000
+
+[tool.pylint.'MESSAGES CONTROL']
+max-line-length = 100
+disable = []
 
 [tool.mypy]
 python_version = "3.9"

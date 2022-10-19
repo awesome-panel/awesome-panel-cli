@@ -39,6 +39,7 @@ dependencies = [
     "gitdir",
     "rich",
     "typer",
+    "Markdown>=3.4.1",
 ]
 dynamic = ["version"]
 
@@ -61,6 +62,7 @@ dev = [
     "toml",
     "twine",
     "typer[all]",
+    "typer-cli",
     "types-invoke",
     "types-requests",
     "types-setuptools",
@@ -152,6 +154,7 @@ module = [
     "hvplot.*",
     "pyparsing.*",
     "vega_datasets.*",
+    "importlib_metadata.*",
 ]
 ignore_missing_imports = true
 

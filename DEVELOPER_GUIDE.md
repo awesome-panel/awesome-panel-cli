@@ -52,6 +52,7 @@ Then you can build
 
 ```bash
 pn build package
+typer awesome_panel_cli.cli.main utils docs --name awesome-panel-cli --output docs.md
 ```
 
 and upload
