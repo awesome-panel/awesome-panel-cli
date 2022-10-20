@@ -39,7 +39,7 @@ dependencies = [
     "gitdir",
     "rich",
     "typer",
-    "Markdown>=3.4.1",
+    "Markdown",
 ]
 dynamic = ["version"]
 
