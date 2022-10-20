@@ -2,6 +2,9 @@
 
 Welcome. We are so happy that you want to contribute.
 
+Please note that this project is released with a [Contributor Code of Conduct](code-of-conduct.md).
+By participating in this project you agree to abide by its terms.
+
 ## 🧳 Prerequisites
 
 - A working [Python](https://www.python.org/downloads/) environment.
@@ -21,7 +24,7 @@ Then run
 git clone https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.project_slug }}.git
 cd {{ cookiecutter.project_slug }}
 pip install pip -U
-pip install -e .[all]
+pip install -e .[dev,examples]
 ```
 
 Then you can see the available commands via
